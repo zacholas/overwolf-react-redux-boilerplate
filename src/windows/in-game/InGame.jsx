@@ -6,7 +6,6 @@ import WindowNames from '../../common/constants/window-names';
 import WindowsService from '../../common/services/windows-service';
 import DragService from '../../common/services/drag-service';
 import '../../common/style.css';
-import { mouseClick } from "../../actions";
 
 const mapStateToProps = (state /*, ownProps*/) => {
 	return {
@@ -64,6 +63,7 @@ class InGame extends Component {
 	}
 
   render() {
+		console.log('In-Game window redux state', this.props.state);
     return (
       <div className="in-game">
 				<svg xmlns='http://www.w3.org/2000/svg' display='none'>
@@ -100,4 +100,4 @@ class InGame extends Component {
   }
 }
 
-export default connect(mapStateToProps, { mouseClick })(InGame);
+export default connect(mapStateToProps)(InGame);

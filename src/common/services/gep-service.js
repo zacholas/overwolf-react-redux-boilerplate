@@ -1,6 +1,7 @@
 /*global overwolf*/
 
 import screenshotService from './screenshots-service';
+import { mouseClickAction } from '../../actions/';
 
 const REQUIRED_FEATURES = ['kill'];
 const REGISTER_RETRY_TIMEOUT = 10000;
@@ -12,8 +13,16 @@ function registerToGEP() {
 		} else if (response.status === 'success') {
 			overwolf.games.events.onNewEvents.removeListener(_handleGameEvent);
 			overwolf.games.events.onNewEvents.addListener(_handleGameEvent);
+      // overwolf.games.inputTracking.onMouseDown.removeListener(_handleClick);
+      // overwolf.games.inputTracking.onMouseDown.addListener(_handleClick);
 		}
 	});
+}
+
+//* Onclick event; used mostly for debugging.
+async function _handleClick(clickInfo) {
+  const store = overwolf.windows.getMainWindow().reduxStore;
+  store.dispatch(mouseClickAction);
 }
 
 async function _handleGameEvent(eventsInfo) {

@@ -90,6 +90,7 @@ class Settings extends Component {
 				<main>
 					<div><span>Toggle:&nbsp;</span><kbd id="toggle">{this.state.toggleText}</kbd></div>
 					<div><span>Take a screentshot:&nbsp;</span><kbd id="screenshot">{this.state.screenshotText}</kbd></div>
+					<button onClick={() => this.props.mouseClick()}>Simulate a mouse click to increment the number</button>
 				</main>
 
       </div>
