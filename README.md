@@ -24,7 +24,7 @@ By default, Overwolf's events are all stored in `src/common/services/gep-service
 The best way to test that something's working is to call an action in one window, and have another window subscribed to the same central redux store, and log out the store's state in each of their render methods. If they both have the state get updated when you executed your action, then you know they are indeed getting driven by a central state.
 
 ## Disclaimer
-Note that I am by no means an expert at React, Redux, or Overwolf. I'm very much figuring this out as I go.
+Note that I am by no means an expert at React, Redux, or Overwolf. I'm very much figuring things out as I go.
 
 ## Okbye
 Enjoy!
