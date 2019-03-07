@@ -33,6 +33,4 @@ async function _handleGameEvent(eventsInfo) {
 	}
 }
 
-export default {
-	registerToGEP
-}
+export default { registerToGEP }

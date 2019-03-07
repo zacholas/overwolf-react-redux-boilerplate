@@ -1,9 +1,17 @@
 /*global overwolf*/
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import HotkeysService from '../../common/services/hotkeys-service';
 import DragService from '../../common/services/drag-service';
 import '../../common/style.css';
+import { mouseClick } from "../../actions";
+
+const mapStateToProps = (state /*, ownProps*/) => {
+	return {
+		state
+	}
+};
 
 class Settings extends Component {
 	constructor(props) {
@@ -57,6 +65,7 @@ class Settings extends Component {
 	}
 
   render() {
+		console.log('Settings window redux state', this.props.state);
     return (
       <div className="settings">
 				<svg xmlns='http://www.w3.org/2000/svg' display='none'>
@@ -88,4 +97,4 @@ class Settings extends Component {
   }
 }
 
-export default Settings;
+export default connect(mapStateToProps, { mouseClick })(Settings);

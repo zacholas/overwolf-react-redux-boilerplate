@@ -1,5 +1,7 @@
 /*global overwolf*/
 
+import { createStore, applyMiddleware, compose } from 'redux';
+import ReduxThunk from 'redux-thunk';
 import WindowNames from '../../common/constants/window-names';
 import RunningGameService from '../../common/services/running-game-service';
 import WindowsService from '../../common/services/windows-service';
@@ -7,6 +9,16 @@ import HotkeysService from '../../common/services/hotkeys-service';
 import GEPService from '../../common/services/gep-service';
 import ScreenshotService from '../../common/services/screenshots-service';
 import EventBus from '../../common/services/event-bus';
+import reducers from '../../reducers';
+
+const store = createStore(
+  reducers,
+  {},
+  compose(
+    applyMiddleware(ReduxThunk),
+  ),
+);
+window.reduxStore = store;
 
 class BackgroundController {
 	static async run() {

@@ -1,10 +1,18 @@
 /*global overwolf*/
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import WindowNames from '../../common/constants/window-names';
 import WindowsService from '../../common/services/windows-service';
 import DragService from '../../common/services/drag-service';
 import '../../common/style.css';
+import { mouseClick } from "../../actions";
+
+const mapStateToProps = (state /*, ownProps*/) => {
+	return {
+		state
+	}
+};
 
 class InGame extends Component {
 	constructor(props) {
@@ -92,4 +100,4 @@ class InGame extends Component {
   }
 }
 
-export default InGame;
+export default connect(mapStateToProps, { mouseClick })(InGame);
