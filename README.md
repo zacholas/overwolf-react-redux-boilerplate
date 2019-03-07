@@ -3,7 +3,7 @@ This repo gets you started with everything you need to roll a React + Redux app 
 
 Based on the Overwolf PUBG Dev samples from https://github.com/overwolf/pubg-dev-challenge-samples
 
-Note: this repo probably won't be updated much, and is mostly meant to illustrate to you how React & Redux work together with Overwolf, rather than necessarily being a proper boilerplate that you might build your project on top of.
+Note: this repo probably won't be updated much, and is mostly meant to illustrate to you how React & Redux work together with Overwolf, rather than necessarily being a proper boilerplate that you might build your project on top of. (But you certainly can if you want -- as of March 7, 2019, it contains 100% of the boilerplate code from the above-linked overwolf sample app)
 
 ## Notes & How To Use
 I won't go into too much detail here because you're still going to inevitably have to spend a lot of time learning how the overwolf app renders your React app before things start to make sense.
