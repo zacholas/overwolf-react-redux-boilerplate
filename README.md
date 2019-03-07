@@ -16,4 +16,17 @@ But with that being said, here are some key notes about how this all works, and 
 - Overwolf recommends having a core "main window" that handles logic, state, etc. In this app, that "root window logic" is in `src/windows/background/BackgroundController.js`.
 - If you open that file, you'll notice that _that_ is where we're defining the redux store, and then we're saving it as a variable on the main window.
 - In our root-level component, we're accessing that main window (by using overwolf's `overwolf.windows.getMainWindow()` function) and getting the value of the reduxStore var. From there, we pass that into our provider like normal.
-- By default, Overwolf's events are all stored in `src/common/services/gep-service.js`. You'll notice that I am calling a sample action in there on click to increment the number stored in the app state.
+
+### Notes For Use
+By default, Overwolf's events are all stored in `src/common/services/gep-service.js`. You'll notice that I am calling a sample action in there on click to increment the number stored in the app state.
+
+### How to test that it's working
+The best way to test that something's working is to call an action in one window, and have another window subscribed to the same central redux store, and log out the store's state in each of their render methods. If they both have the state get updated when you executed your action, then you know they are indeed getting driven by a central state.
+
+## Disclaimer
+Note that I am by no means an expert at React, Redux, or Overwolf. I'm very much figuring this out as I go.
+
+## Okbye
+Enjoy!
+
+~Zach
