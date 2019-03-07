@@ -1,4 +1,4 @@
-# Overwolf-React-Redux-Boilerplate
+# overwolf-react-redux-boilerplate
 This repo gets you started with everything you need to roll a React + Redux app in Overwolf.
 
 Based on the Overwolf PUBG Dev samples from https://github.com/overwolf/pubg-dev-challenge-samples
